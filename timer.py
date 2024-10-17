@@ -27,7 +27,9 @@ im = Image.open("times-up.jpeg")
 # ask user to enter desired countdown time
 set_time = int(input("Please set your timer in seconds: "))
 
-time.sleep(set_time)
+print("Players, stand up")
+time.sleep(random.randint(5,25))
+print("Time's up! Last to sit down wins.")
 
 im.show()
 
