@@ -16,7 +16,7 @@ timer.py uses the time library to help keep track of time
     ## Display image
 
 ## Write names of the people who sat down
-    ## when one name remain state winner 
+## when one name remain state winner 
 
 
 import time # The time library has a sleep function that will pause the script for a specifized amount of time
