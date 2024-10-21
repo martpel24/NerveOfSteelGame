@@ -16,7 +16,7 @@ timer.py uses the time library to help keep track of time
     ## Display image
 
 ## Write names of the people who sat down
-    ## when one name remain state winner 
+## when one name remain state winner 
 
 
 import time # The time library has a sleep function that will pause the script for a specifized amount of time
@@ -27,7 +27,9 @@ im = Image.open("times-up.jpeg")
 # ask user to enter desired countdown time
 set_time = int(input("Please set your timer in seconds: "))
 
-time.sleep(set_time)
+print("Players, stand up")
+time.sleep(random.randint(5,25))
+print("Time's up! Last to sit down wins.")
 
 im.show()
 
