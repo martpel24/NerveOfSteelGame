@@ -1,50 +1,47 @@
-"""
-This program is used as an example for MGTC28.
-timer.py is a simple Python script that will allow user to set timer duration.
-Upon timer expiry, user will see the time up meme and sound notification.
-timer.py uses the time library to help keep track of time
-"""
-
-
-# This program is timer that counts down
-
-## Random library
-<<<<<<< HEAD
+import time
 import random
-=======
+from PIL import Image
 
-## sample between 10 - 25 - range(10,26)
-
-## Times Up 
-    ## Display image
-
-## Write names of the people who sat down
-    ## when one name remain state winner 
-
-
->>>>>>> a099b2af61003375c6abc31a3310ba7f6237446e
-import time # The time library has a sleep function that will pause the script for a specifized amount of time
-from PIL import Image # the pillow library makes it easy to display images 
-
+# Open the meme image
 im = Image.open("times-up.jpeg")
 
-<<<<<<< HEAD
-print("Players, stand up")
-## sample between 10 - 25 - range(10,26)
-time.sleep(random.randint(10,25))
+def nerve_of_steel_game():
+    """
+    This program is used as an example for MGTC28.
+    It simulates a party game where players must sit before the random timer ends.
+    The last person to sit wins, and an image is shown when the timer is up.
+    """
 
-## Times Up 
-    ## Display image
-print("Time's up! Last to sit down wins.")
-=======
-# ask user to enter desired countdown time
-set_time = int(input("Please set your timer in seconds: "))
+    # Step 1: Display the start of the game
+    print("Players stand!")
 
-time.sleep(set_time)
->>>>>>> a099b2af61003375c6abc31a3310ba7f6237446e
+    # Step 2: Sleep for a random time between 10 and 25 seconds
+    sleep_time = random.randint(10, 25)
+    print(f"(Waiting for {sleep_time} seconds... You can sit during this time.)")
 
-im.show()
+    time.sleep(sleep_time)
 
+    # Step 3: Keep track of players sitting down
+    players_sitting = []
 
-## Write names of the people who sat down
-## when one name remain state winner 
+    while True:
+        # Ask the user to input the names of players who sat down
+        name = input("Enter the name of the player who sat down (or 'done' to finish): ")
+        if name.lower() == 'done':
+            break
+        players_sitting.append(name)
+
+    # Step 4: Time's up! Display the image and result
+    print("\nTime's Up!")
+    im.show()  # Show the "Time's Up" image
+
+    if len(players_sitting) == 0:
+        print("No players sat down. Everyone is eliminated!")
+    else:
+        # The last person to sit down wins
+        winner = players_sitting[-1]
+        print(f"The last person to sit down was {winner}. {winner} wins!")
+        print(f"Players still standing: None (all eliminated).")
+
+# Run the game
+nerve_of_steel_game()
