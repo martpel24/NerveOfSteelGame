@@ -19,11 +19,15 @@ def nerve_of_steel_game():
     sleep_time = random.randint(10, 25)
     print(f"(Waiting for {sleep_time} seconds... You can sit during this time.)")
 
-    time.sleep(sleep_time)
+    #time.sleep(sleep_time)
 
     # Step 3: Keep track of players sitting down
     players_sitting = []
-
+    
+    # Step 4: Time's up! Display the image and result
+    print("\nTime's Up!")
+    im.show()  # Show the "Time's Up" image
+    
     while True:
         # Ask the user to input the names of players who sat down
         name = input("Enter the name of the player who sat down (or 'done' to finish): ")
@@ -31,17 +35,19 @@ def nerve_of_steel_game():
             break
         players_sitting.append(name)
 
-    # Step 4: Time's up! Display the image and result
-    print("\nTime's Up!")
-    im.show()  # Show the "Time's Up" image
 
-    if len(players_sitting) == 0:
-        print("No players sat down. Everyone is eliminated!")
+    if len(players_sitting) != 1:
+        print(f"Players still standing {players_sitting}.")
+        input("press any key to continue playing...")
+        nerve_of_steel_game()
     else:
         # The last person to sit down wins
         winner = players_sitting[-1]
         print(f"The last person to sit down was {winner}. {winner} wins!")
         print(f"Players still standing: None (all eliminated).")
+        input("press any key to start a new game...")
+        nerve_of_steel_game()
 
 # Run the game
+input("press any key to start game...")
 nerve_of_steel_game()
