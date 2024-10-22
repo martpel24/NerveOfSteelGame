@@ -19,7 +19,7 @@ def nerve_of_steel_game():
     sleep_time = random.randint(10, 25)
     print(f"(Waiting for {sleep_time} seconds... You can sit during this time.)")
 
-    #time.sleep(sleep_time)
+    time.sleep(sleep_time)
 
     # Step 3: Keep track of players sitting down
     players_sitting = []
