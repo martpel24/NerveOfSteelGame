@@ -38,16 +38,16 @@ def nerve_of_steel_game():
 
     if len(players_sitting) != 1:
         print(f"Players still standing {players_sitting}.")
-        input("press any key to continue playing...")
+        input("press enter to continue playing...")
         nerve_of_steel_game()
     else:
         # The last person to sit down wins
         winner = players_sitting[-1]
         print(f"The last person to sit down was {winner}. {winner} wins!")
         print(f"Players still standing: None (all eliminated).")
-        input("press any key to start a new game...")
+        input("press enter to start a new game...")
         nerve_of_steel_game()
 
 # Run the game
-input("press any key to start game...")
+input("press enter to start game...")
 nerve_of_steel_game()
